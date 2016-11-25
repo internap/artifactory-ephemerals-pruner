@@ -1,18 +1,10 @@
 language: python
-python: 3.5
-env:
-  matrix:
-  - TOXENV=py35
-  - TOXENV=py34
-  - TOXENV=py33
-  - TOXENV=py27
-  - TOXENV=py26
-  - TOXENV=pypy
+python: 3.4
 
 install:
     - pip install -U tox
 
-script: tox -e ${TOXENV}
+script: tox
 
 deploy:
   provider: pypi
@@ -23,4 +15,3 @@ deploy:
   on:
     tags: true
     repo: internap/artifactory-ephemerals-pruner
-    condition: $TOXENV == py27
