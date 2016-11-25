@@ -8,10 +8,12 @@ env:
   - TOXENV=py27
   - TOXENV=py26
   - TOXENV=pypy
-  global:
-    secure: hJp5PoUfntU+CBFb3m1IaDXwSCcTEle42emTrvnYjpJB1voqgRzzP8HNYN1S7DLszwF3cr+cc1XWNIN677tHqQCu7i0XzE7nVUCgiblpxj9/cjMycpSKi64i1rc39W2F9jWkUQeQcSqhj7s0XV4CLjpJEQaBEvDO9dAoAG7mt9LtoAejv/4nzvi9PYIH/iaM5YmuU3Az+3T8zPZ87uWiyH1BySLnXzFJ6iNCDipRWuRCoZ45v5oSbJ/3NMNxoSzPX/fLfb75FyO2OeMp6ZzWnUXmqKmZ72l5WU4NvG55OqyBiwwgMHOr+aOv/R3xHkOqZuxqdLRiprPsbkIrbLy8DrnwMlPtOYZq6oxueoO3B/qbdJSsI4NeM7nC/BOp+eUidXgW69GjybYla2gxdiG3jhEMg83cDx7vy9hO0OWwMuoNKtesE551Yv3Ra8+dSZJvl4XTNI3+TxR7yoCDtODG1KvOXUFXppRorwB09o4vq+f73yikrdtUOuOjeVMr3I4N2JZGkmSSBl7WAPrpijz0pHTaigwjhFvVpdMlEoEc8DFQHHf0l+sWkrPU7WwzKp9v+ofTsFPkqiFvq3FuUb1Xvq3v4baDc6wqS7dZWhp0FNBvOLPM3vRHaixG03I/eC8ninfk1AsMlrkQo5mt+YLD+1ic+xo7R1YMU3q4DNVcQE0=
-install: pip install -U tox
+
+install:
+    - pip install -U tox
+
 script: tox -e ${TOXENV}
+
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
